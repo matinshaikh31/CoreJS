@@ -1,4 +1,4 @@
-//Map is Function is use to traverse array or map array element
+// //Map is Function is use to traverse array or map array element
 const arr = [1, 2, 3, 4, 5];
 
 function double(x) {
@@ -18,8 +18,8 @@ console.log(output2);
 
 console.log(arr.filter((x) => x % 2));
 
-// Reduce is use when you only get one element from array for
-// eg you want largest number sum of array at that time you use a reduce
+// // Reduce is use when you only get one element from array for
+// // eg you want largest number sum of array at that time you use a reduce
 
 function sum(array) {
   let sum = 0;
@@ -44,19 +44,45 @@ console.log(output3);
 // reduce take 2 argument first function and 2 is a acu value
 
 
-// function sum(array) {
-//     let sum = 0;
-//     for (let i = 0; i < array.length; i++) {
-//       sum = sum + array[i];
-//     }
-//     return sum;
-//   }
+function sum(array) {
+    let max = 0;
+    for (let i = 0; i < array.length; i++) {
+      if(arr[i]>max){
+        max=arr[i]    
+      }
+
+    }
+    return max;
+  }
   
 //   console.log(sum(arr));
-  
-//   const output3 = arr.reduce(function (acc, curr) {
-//     acc = acc + curr;
-//     return acc
-//   }, 0);
-//   console.log(output3);
+
+  const output4 = arr.reduce((acc,curr)=>{
+    if(curr>acc){
+      acc=curr
+    }
+    return acc
+  },0)
+  console.log(output4);
+
+
+
+
+
+
+  //Example of Map
+
+  const user = [
+    {Fn:"Matin",Ln:"Shaikh",age:10},
+    {Fn:"Yash",Ln:"Sigh",age:11},
+    {Fn:"jay",Ln:"kishor",age:16},
+  ]
+
+const use = user.map((x)=>{
+    return(x.Fn + x.Ln)
+})
+// console.log(use)
+
+const age = user.filter((a)=>a.age>10).map((x)=>x.Fn)
+console.log(age)
   
